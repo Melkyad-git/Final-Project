@@ -2,7 +2,7 @@ const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
+  
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
     
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
-    // Close mobile menu when clicking a link
+
     document.querySelectorAll('.mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Testimonial Slider
+
     const testimonials = document.querySelectorAll('.testimonial');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
     rightArrow.addEventListener('click', nextTestimonial);
     leftArrow.addEventListener('click', prevTestimonial);
 
-    // Auto-rotate testimonials every 5 seconds
+    
     let testimonialInterval = setInterval(nextTestimonial, 5000);
 
-    // Pause auto-rotation when hovering over testimonials
+ 
     const testimonialSlider = document.querySelector('.testimonial-slider');
     testimonialSlider.addEventListener('mouseenter', () => {
         clearInterval(testimonialInterval);
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         testimonialInterval = setInterval(nextTestimonial, 5000);
     });
 
-    // Accordion FAQ
+   
     const accordionItems = document.querySelectorAll('.accordion-item');
     
     accordionItems.forEach(item => {
@@ -66,17 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
         header.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
             
-            // Close all items
+         
             accordionItems.forEach(i => i.classList.remove('active'));
             
-            // Open current item if it wasn't active
+           
             if (!isActive) {
                 item.classList.add('active');
             }
         });
     });
 
-    // Smooth scrolling for anchor links
+  
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -94,26 +94,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission
+   
     const contactForm = document.getElementById('messageForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
+        
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Here you would typically send the data to a server
+          
             console.log('Form submitted:', data);
             
-            // Show success message
+       
             alert('Thank you for your message! We will contact you soon.');
             this.reset();
         });
     }
 
-    // Active nav link highlighting
+
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
     
